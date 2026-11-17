@@ -4,7 +4,7 @@ ReelGuard is a native Android **companion prototype** for a narrow goal: block r
 
 ## Current implementation status
 
-This repository now contains an Android/Kotlin build scaffold, a consent-first dashboard, an AccessibilityService lifecycle, safe overlay infrastructure, a deterministic and unit-tested policy state machine, local opt-in diagnostics, and CI.
+This repository now contains an Android/Kotlin build scaffold, a consent-first dashboard, an AccessibilityService lifecycle, safe overlay infrastructure, a deterministic and unit-tested policy state machine, local opt-in diagnostics, and an Android CI workflow template.
 
 **It is not yet a working Instagram blocker.** The source deliberately ships with an empty compatibility profile. Until the target phone's Instagram accessibility interface has been tested, the service does not inspect Instagram's UI tree, identify Reels, or enable DM mode. This is intentional: a recent chat visit or a guessed selector must never authorise a Reel.
 
@@ -19,7 +19,7 @@ No APK has been built or phone-tested in this workspace because it has no JDK or
 - Accessibility overlay controller for a blocked viewer and a future locked shared-Reel session
 - Safe default `CompatibilityProfile.UNVERIFIED`; DM mode is disabled
 - Local opt-in, sanitised diagnostic trace (maximum 100 entries)
-- Unit tests for the policy state machine and GitHub Actions build/lint/test/APK workflow
+- Unit tests for the policy state machine and a GitHub Actions build/lint/test/APK workflow template at `docs/android.yml`
 
 ## Build
 
@@ -28,6 +28,14 @@ See [docs/TESTING.md](docs/TESTING.md) for prerequisites and commands. With JDK 
 ```bash
 ./gradlew testDebugUnitTest lintDebug assembleDebug
 ```
+
+## Working together on the full project
+
+You are already doing the key repository step correctly: commit any browser-side changes to the same active branch, `arena/d2998d6a-reelguard`. The assistant can sync that branch, implement source changes, commit them, and push normal project files back to it. Do not create or switch to another branch for this work.
+
+To complete the product rather than only the source scaffold, the user will eventually need to provide the Instagram interface language and version code (if available), install a test APK on the target phone, knowingly enable the Android Accessibility service, and report the results of the privacy-safe test checklist. Do not send private conversations, credentials, screenshots, or accessibility dumps.
+
+The Android CI workflow is intentionally stored as `docs/android.yml` rather than active under `.github/workflows/`. If a cloud APK build is wanted later, the repository owner can copy that file to `.github/workflows/android.yml` through GitHub's web UI. This separation avoids requiring the assistant's GitHub connection to have workflow-edit permission.
 
 ## Next required step: compatibility probe
 
