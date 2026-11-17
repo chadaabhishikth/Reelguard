@@ -1,0 +1,18 @@
+# Gradle / Android local state
+.gradle/
+build/
+**/build/
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Generated signing and APK files
+*.jks
+*.keystore
+*.apk
+*.aab
+
+# OS files
+.DS_Store

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">ReelGuard</string>
+    <string name="accessibility_service_label">ReelGuard protection</string>
+    <string name="accessibility_service_description">Voluntary Instagram Reel protection. ReelGuard only evaluates Instagram windows and never uploads screen content.</string>
+    <string name="dashboard_title">Protect your attention</string>
+    <string name="dashboard_intro">ReelGuard is a local, voluntary companion. It does not modify Instagram and it cannot guarantee detection of unknown Instagram screens.</string>
+    <string name="consent_label">I understand that enabling Accessibility lets ReelGuard inspect Instagram screen structure locally to provide protection.</string>
+    <string name="open_accessibility_settings">Open Accessibility settings</string>
+    <string name="protection_label">Enable Reel protection</string>
+    <string name="dm_mode_label">Allow DM-shared Reels (experimental)</string>
+    <string name="dm_mode_summary">Unavailable until this Instagram build passes the on-device compatibility probe.</string>
+    <string name="privacy_title">Your privacy</string>
+    <string name="privacy_summary">No Internet permission, account login, analytics, screenshots, or message storage. Accessibility is only used while ReelGuard is enabled.</string>
+    <string name="diagnostics_label">Local diagnostic trace</string>
+    <string name="diagnostics_summary">Optional: store up to 100 sanitised state transitions on this phone. It never includes message text, usernames, captions, selectors, or screenshots.</string>
+    <string name="compatibility_title">Compatibility</string>
+    <string name="compatibility_unverified">Unverified — general blocking and DM mode remain off until a profile is tested on your phone.</string>
+    <string name="service_enabled">Accessibility service: enabled</string>
+    <string name="service_disabled">Accessibility service: not enabled</string>
+    <string name="protection_disabled_summary">Protection is off. Enabling it stores your preference; the service must also be enabled in Android settings.</string>
+    <string name="protection_enabled_summary">Protection preference is on. It takes effect only after Android enables the service and a tested compatibility profile is installed.</string>
+    <string name="compatibility_probe_title">Compatibility probe</string>
+    <string name="compatibility_probe_summary">This starter build intentionally has no Instagram selectors. Follow docs/TESTING.md to collect the required on-device evidence without recording message content.</string>
+    <string name="blocked_reels_title">Reels feed blocked</string>
+    <string name="blocked_reels_summary">Return to the previous screen to continue using Instagram.</string>
+    <string name="shared_reel_title">Shared Reel — scrolling locked</string>
+    <string name="shared_reel_summary">This experimental guard blocks touch navigation. Return to the conversation when you are done.</string>
+    <string name="back_to_chat">Back to chat</string>
+</resources>

@@ -1,6 +1,6 @@
 # ReelGuard — Android prototype plan
 
-**Status:** Planning only; no app or APK has been built or device-tested.  
+**Status:** Initial Android source scaffold is implemented; no APK has yet been built or device-tested.
 **Prepared:** 17 November 2026  
 **Initial audience:** One consenting user, on one Android phone, using the official Instagram app.
 
@@ -151,11 +151,11 @@ Initial distribution is a personal-use test APK. If public Play Store distributi
 ### M0 — Target and build setup
 
 - Obtain the device/version details above.
-- Establish a usable source handoff and repository structure.
-- Provision matching JDK, Android SDK, and Gradle wrapper, or prepare a CI build.
-- Pin dependencies and document reproducible build commands.
+- Establish a usable source handoff and repository structure. **Completed:** Kotlin/XML source layout, Gradle wrapper, pinned dependencies, and Android CI workflow are present.
+- Provision matching JDK and Android SDK locally, or run the CI build. **Pending:** this workspace currently has neither local toolchain.
+- Pin dependencies and document reproducible build commands. **Completed:** see `docs/TESTING.md`.
 
-**Output:** An installable empty test app and build instructions. Repository access alone does not install an Android toolchain or provide device testing.
+**Output:** An installable empty test app and build instructions. The source scaffold is ready; repository access alone does not install an Android toolchain, produce an APK, or provide device testing.
 
 ### M1 — Compatibility probe
 
@@ -238,7 +238,7 @@ The proposed CI workflow will compile, lint, and run unit tests, then upload a t
 
 ## 10. Handoff and next inputs
 
-The GitHub connector currently reports **unsupported** in this environment; direct connector-based clone/commit/push access is not established. Practical options are a public repository URL or an uploaded source ZIP, followed by a Git-ready source archive/patch for you to commit. Do not paste private access tokens into the conversation.
+The source repository is now structured for local Gradle builds and GitHub Actions CI. Do not commit account credentials, private accessibility dumps, or signing keys.
 
 Remaining inputs before the compatibility probe:
 
@@ -247,7 +247,7 @@ Remaining inputs before the compatibility probe:
 
 The target device and Instagram version name have been supplied as recorded in section 2. Compatibility is still unverified until a probe is run on the phone.
 
-The workspace inspected during planning has Java 11 but no configured Android SDK or Gradle executable. Provisioning compatible build tools or using CI is part of M0, not a completed step.
+The current workspace has no configured JDK or Android SDK, so no local APK or test result is claimed. Provisioning compatible build tools or running CI remains the next M0 validation step.
 
 ## Official implementation references
 
